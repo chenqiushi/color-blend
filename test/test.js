@@ -144,6 +144,66 @@ describe('Basics: blend { r: 250, g: 200, b: 0, a: 0.6 } with { r: 50, g: 150, b
       )
     ).toStrictEqual({ r: 175, g: 163, b: 16, a: 0.76 })
   })
+
+  test('linearBurn should return { r: 143, g: 156, b: 16, a: 0.76 }', () => {
+    expect(
+      blender.linearBurn({ r: 250, g: 200, b: 0, a: 0.6 }, { r: 50, g: 150, b: 75, a: 0.4 })
+    ).toStrictEqual({ r: 143, g: 156, b: 16, a: 0.76 });
+  });
+
+  test('linearDodge should return { r: 209, g: 207, b: 39, a: 0.76 }', () => {
+    expect(
+      blender.linearDodge({ r: 250, g: 200, b: 0, a: 0.6 }, { r: 50, g: 150, b: 75, a: 0.4 })
+    ).toStrictEqual({ r: 209, g: 207, b: 39, a: 0.76 });
+  });
+
+  test('darkerColor should return { r: 145, g: 174, b: 39, a: 0.76 }', () => {
+    expect(
+      blender.darkerColor({ r: 250, g: 200, b: 0, a: 0.6 }, { r: 50, g: 150, b: 75, a: 0.4 })
+    ).toStrictEqual({ r: 145, g: 174, b: 39, a: 0.76 });
+  });
+
+  test('lighterColor should return { r: 208, g: 189, b: 16, a: 0.76 }', () => {
+    expect(
+      blender.lighterColor({ r: 250, g: 200, b: 0, a: 0.6 }, { r: 50, g: 150, b: 75, a: 0.4 })
+    ).toStrictEqual({ r: 208, g: 189, b: 16, a: 0.76 });
+  });
+
+  test('vividLight should return { r: 205, g: 203, b: 16, a: 0.76 }', () => {
+    expect(
+      blender.vividLight({ r: 250, g: 200, b: 0, a: 0.6 }, { r: 50, g: 150, b: 75, a: 0.4 })
+    ).toStrictEqual({ r: 205, g: 203, b: 16, a: 0.76 });
+  });
+
+  test('linearLight should return { r: 159, g: 204, b: 16, a: 0.76 }', () => {
+    expect(
+      blender.linearLight({ r: 250, g: 200, b: 0, a: 0.6 }, { r: 50, g: 150, b: 75, a: 0.4 })
+    ).toStrictEqual({ r: 159, g: 204, b: 16, a: 0.76 });
+  });
+
+  test('pinLight should return { r: 161, g: 189, b: 16, a: 0.76 }', () => {
+    expect(
+      blender.pinLight({ r: 250, g: 200, b: 0, a: 0.6 }, { r: 50, g: 150, b: 75, a: 0.4 })
+    ).toStrictEqual({ r: 161, g: 189, b: 16, a: 0.76 });
+  });
+
+  test('hardMix should return { r: 209, g: 207, b: 16, a: 0.76 }', () => {
+    expect(
+      blender.hardMix({ r: 250, g: 200, b: 0, a: 0.6 }, { r: 50, g: 150, b: 75, a: 0.4 })
+    ).toStrictEqual({ r: 209, g: 207, b: 16, a: 0.76 });
+  });
+
+  test('subtract should return { r: 192, g: 142, b: 16, a: 0.76 }', () => {
+    expect(
+      blender.subtract({ r: 250, g: 200, b: 0, a: 0.6 }, { r: 50, g: 150, b: 75, a: 0.4 })
+    ).toStrictEqual({ r: 192, g: 142, b: 16, a: 0.76 });
+  });
+
+  test('divide should return { r: 209, g: 207, b: 16, a: 0.76 }', () => {
+    expect(
+      blender.divide({ r: 250, g: 200, b: 0, a: 0.6 }, { r: 50, g: 150, b: 75, a: 0.4 })
+    ).toStrictEqual({ r: 209, g: 207, b: 16, a: 0.76 });
+  });
 })
 
 function approximateChannels(color) {

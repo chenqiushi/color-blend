@@ -164,3 +164,27 @@ export function color(backdrop: RGB, source: RGB) {
 export function luminosity(backdrop: RGB, source: RGB) {
   return setLuminosity(backdrop, getLuminosity(source))
 }
+
+/**
+ * Blend two color channels with the "darkerColor" blend mode
+ * (NOT yet in W3C standard)
+ *
+ * @param backdrop The background color channel as an { r,g,b } object with each channel represented as a fraction
+ * @param source   The foreground color channel as an { r,g,b } object with each channel represented as a fraction
+ * @return The blended color
+ */
+ export function darkerColor(backdrop: RGB, source: RGB) {
+  return getLuminosity(backdrop) < getLuminosity(source) ? backdrop : source;
+}
+
+/**
+ * Blend two color channels with the "lighterColor" blend mode
+ * (NOT yet in W3C standard)
+ *
+ * @param backdrop The background color channel as an { r,g,b } object with each channel represented as a fraction
+ * @param source   The foreground color channel as an { r,g,b } object with each channel represented as a fraction
+ * @return The blended color
+ */
+export function lighterColor(backdrop: RGB, source: RGB) {
+  return getLuminosity(backdrop) > getLuminosity(source) ? backdrop : source;
+}

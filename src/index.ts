@@ -262,3 +262,118 @@ export function luminosity(backdrop: RGBA, source: RGBA) {
     nonSeparableBlendModes.luminosity
   )
 }
+
+
+/* **************************************************** */
+/* THE FOLLOWING BLEND MODES ARE NOT YET IN W3C STANDARD */
+/* **************************************************** */
+
+/**
+ * Blend two colors with the "linearBurn" blend mode
+ *
+ * @param backdrop The background color object { r,g,b,a } with the color channels being integers in the [0..255] range and the alpha channel being a fraction in [0..1]
+ * @param source   The foreground color object { r,g,b,a } with the color channels being integers in the [0..255] range and the alpha channel being a fraction in [0..1]
+ * @return The blended color
+ */
+ export function linearBurn(backdrop: RGBA, source: RGBA) {
+  return performBlend(backdrop, source, separableBlend, separableBlendModes.linearBurn);
+}
+
+/**
+ * Blend two colors with the "linearDodge" blend mode
+ *
+ * @param backdrop The background color object { r,g,b,a } with the color channels being integers in the [0..255] range and the alpha channel being a fraction in [0..1]
+ * @param source   The foreground color object { r,g,b,a } with the color channels being integers in the [0..255] range and the alpha channel being a fraction in [0..1]
+ * @return The blended color
+ */
+export function linearDodge(backdrop: RGBA, source: RGBA) {
+  return performBlend(backdrop, source, separableBlend, separableBlendModes.linearDodge);
+}
+
+/**
+ * Blend two colors with the "darkerColor" blend mode
+ *
+ * @param backdrop The background color object { r,g,b,a } with the color channels being integers in the [0..255] range and the alpha channel being a fraction in [0..1]
+ * @param source   The foreground color object { r,g,b,a } with the color channels being integers in the [0..255] range and the alpha channel being a fraction in [0..1]
+ * @return The blended color
+ */
+export function darkerColor(backdrop: RGBA, source: RGBA) {
+  return performBlend(backdrop, source, nonSeparableBlend, nonSeparableBlendModes.darkerColor);
+}
+
+/**
+ * Blend two colors with the "lighterColor" blend mode
+ *
+ * @param backdrop The background color object { r,g,b,a } with the color channels being integers in the [0..255] range and the alpha channel being a fraction in [0..1]
+ * @param source   The foreground color object { r,g,b,a } with the color channels being integers in the [0..255] range and the alpha channel being a fraction in [0..1]
+ * @return The blended color
+ */
+export function lighterColor(backdrop: RGBA, source: RGBA) {
+  return performBlend(backdrop, source, nonSeparableBlend, nonSeparableBlendModes.lighterColor);
+}
+
+/**
+ * Blend two colors with the "vividLight" blend mode
+ *
+ * @param backdrop The background color object { r,g,b,a } with the color channels being integers in the [0..255] range and the alpha channel being a fraction in [0..1]
+ * @param source   The foreground color object { r,g,b,a } with the color channels being integers in the [0..255] range and the alpha channel being a fraction in [0..1]
+ * @return The blended color
+ */
+export function vividLight(backdrop: RGBA, source: RGBA) {
+  return performBlend(backdrop, source, separableBlend, separableBlendModes.vividLight);
+}
+
+/**
+ * Blend two colors with the "linearLight" blend mode
+ *
+ * @param backdrop The background color object { r,g,b,a } with the color channels being integers in the [0..255] range and the alpha channel being a fraction in [0..1]
+ * @param source   The foreground color object { r,g,b,a } with the color channels being integers in the [0..255] range and the alpha channel being a fraction in [0..1]
+ * @return The blended color
+ */
+export function linearLight(backdrop: RGBA, source: RGBA) {
+  return performBlend(backdrop, source, separableBlend, separableBlendModes.linearLight);
+}
+
+/**
+ * Blend two colors with the "pinLight" blend mode
+ *
+ * @param backdrop The background color object { r,g,b,a } with the color channels being integers in the [0..255] range and the alpha channel being a fraction in [0..1]
+ * @param source   The foreground color object { r,g,b,a } with the color channels being integers in the [0..255] range and the alpha channel being a fraction in [0..1]
+ * @return The blended color
+ */
+export function pinLight(backdrop: RGBA, source: RGBA) {
+  return performBlend(backdrop, source, separableBlend, separableBlendModes.pinLight);
+}
+
+/**
+ * Blend two colors with the "hardMix" blend mode
+ *
+ * @param backdrop The background color object { r,g,b,a } with the color channels being integers in the [0..255] range and the alpha channel being a fraction in [0..1]
+ * @param source   The foreground color object { r,g,b,a } with the color channels being integers in the [0..255] range and the alpha channel being a fraction in [0..1]
+ * @return The blended color
+ */
+export function hardMix(backdrop: RGBA, source: RGBA) {
+  return performBlend(backdrop, source, separableBlend, separableBlendModes.hardMix);
+}
+
+/**
+ * Blend two colors with the "subtract" blend mode
+ *
+ * @param backdrop The background color object { r,g,b,a } with the color channels being integers in the [0..255] range and the alpha channel being a fraction in [0..1]
+ * @param source   The foreground color object { r,g,b,a } with the color channels being integers in the [0..255] range and the alpha channel being a fraction in [0..1]
+ * @return The blended color
+ */
+export function subtract(backdrop: RGBA, source: RGBA) {
+  return performBlend(backdrop, source, separableBlend, separableBlendModes.subtract);
+}
+
+/**
+ * Blend two colors with the "divide" blend mode
+ *
+ * @param backdrop The background color object { r,g,b,a } with the color channels being integers in the [0..255] range and the alpha channel being a fraction in [0..1]
+ * @param source   The foreground color object { r,g,b,a } with the color channels being integers in the [0..255] range and the alpha channel being a fraction in [0..1]
+ * @return The blended color
+ */
+export function divide(backdrop: RGBA, source: RGBA) {
+  return performBlend(backdrop, source, separableBlend, separableBlendModes.divide);
+}
